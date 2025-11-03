@@ -4,7 +4,7 @@ This sample application is a Lambda function that processes events from an API G
 このサンプルアプリケーションは、API Gateway REST APIからのイベントを処理するLambda関数です。このAPIは、ウェブブラウザやその他のHTTPクライアントからアクセスできるパブリックエンドポイントを提供します。エンドポイントにリクエストを送信すると、APIはリクエストをシリアル化し、関数に送信します。関数はLambda APIを呼び出して使用率データを取得し、必要な形式でAPIに返します。
 
 :warning: The application creates a public API endpoint that is accessible over the internet. When you're done testing, run the cleanup script to delete it.
-:注意: アプリケーションはインターネット経由でアクセス可能なパブリックAPIエンドポイントを作成します。テストが完了したら、クリーンアップスクリプトを実行してエンドポイントを削除してください。
+アプリケーションはインターネット経由でアクセス可能なパブリックAPIエンドポイントを作成します。テストが完了したら、クリーンアップスクリプトを実行してエンドポイントを削除してください。
 
 ![Architecture](/sample-apps/nodejs-apig/images/sample-nodejs-apig.png)
 
