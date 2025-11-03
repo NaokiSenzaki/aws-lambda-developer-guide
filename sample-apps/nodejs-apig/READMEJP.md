@@ -1,43 +1,37 @@
 # API Gateway proxy と Node.js の統合
 
-This sample application is a Lambda function that processes events from an API Gateway REST API. The API provides a public endpoint that you can access with a web browser or other HTTP client. When you send a request to the endpoint, the API serializes the request and sends it to the function. The function calls the Lambda API to get utilization data and returns it to the API in the required format.
 このサンプルアプリケーションは、API Gateway REST APIからのイベントを処理するLambda関数です。このAPIは、ウェブブラウザやその他のHTTPクライアントからアクセスできるパブリックエンドポイントを提供します。エンドポイントにリクエストを送信すると、APIはリクエストをシリアル化し、関数に送信します。関数はLambda APIを呼び出して使用率データを取得し、必要な形式でAPIに返します。
 
-:warning: The application creates a public API endpoint that is accessible over the internet. When you're done testing, run the cleanup script to delete it.
-アプリケーションはインターネット経由でアクセス可能なパブリックAPIエンドポイントを作成します。テストが完了したら、クリーンアップスクリプトを実行してエンドポイントを削除してください。
+:warning: アプリケーションはインターネット経由でアクセス可能なパブリックAPIエンドポイントを作成します。テストが完了したら、クリーンアップスクリプトを実行してエンドポイントを削除してください。
 
 ![Architecture](/sample-apps/nodejs-apig/images/sample-nodejs-apig.png)
 
-The project source includes function code and supporting resources:
 プロジェクト ソースには、関数コードとサポート リソースが含まれています。
 
-- `function` - A Node.js function. Node.js関数
-- `template.yml` - An AWS CloudFormation template that creates an application. アプリケーションを作成する AWS CloudFormation テンプレート
-- `1-create-bucket.sh`, `2-deploy.sh`, etc. - Shell scripts that use the AWS CLI to deploy and manage the application.  AWS CLI を使用してアプリケーションをデプロイおよび管理するシェルスクリプト。
+- `function` - Node.js関数
+- `template.yml` - アプリケーションを作成する AWS CloudFormation テンプレート
+- `1-create-bucket.sh`, `2-deploy.sh`, etc. - AWS CLI を使用してアプリケーションをデプロイおよび管理するシェルスクリプト。
 
-Use the following instructions to deploy the sample application.
 サンプル アプリケーションをデプロイするには、次の手順に従います。
 
 # Requirements 要件
-- [Node.js 18 with npm (Node.js 18 と npm)](https://nodejs.org/en/download/releases/)
-- The Bash shell. For Linux and macOS, this is included by default. In Windows 10, you can install the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows-integrated version of Ubuntu and Bash.
-  Bashシェル。LinuxとmacOSではデフォルトで含まれています。Windows 10では、[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)をインストールすることで、Windows統合版のUbuntuとBashを入手できます。
-- [The AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) v1.17 or newer.
-  [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) v1.17 以降。
+- [Node.js 18 と npm](https://nodejs.org/en/download/releases/)
+- Bashシェル。LinuxとmacOSではデフォルトで含まれています。Windows 10では、[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)をインストールすることで、Windows統合版のUbuntuとBashを入手できます。
+- [The AWS CLI] v1.17 以降。
 
-# Setup
-Download or clone this repository.
+# セットアップ
+このリポジトリをダウンロードまたはクローンします。
 
     $ git clone https://github.com/awsdocs/aws-lambda-developer-guide.git
     $ cd aws-lambda-developer-guide/sample-apps/nodejs-apig
 
-To create a new bucket for deployment artifacts, run `1-create-bucket.sh`.
+サンプルアプリケーション用の新しいバケットを作成するには、`1-create-bucket.sh` を実行します。
 
     nodejs-apig$ ./1-create-bucket.sh
     make_bucket: lambda-artifacts-a5e491dbb5b22e0d
 
-# Deploy
-To deploy the application, run `2-deploy.sh`.
+# デプロイ
+アプリケーションをデプロイするには、`2-deploy.sh` を実行します。
 
     nodejs-apig$ ./2-deploy.sh
     added 16 packages from 18 contributors and audited 18 packages in 0.926s
