@@ -9,17 +9,21 @@ This sample application is a Lambda function that processes events from an API G
 ![Architecture](/sample-apps/nodejs-apig/images/sample-nodejs-apig.png)
 
 The project source includes function code and supporting resources:
+プロジェクト ソースには、関数コードとサポート リソースが含まれています。
 
-- `function` - A Node.js function.
-- `template.yml` - An AWS CloudFormation template that creates an application.
-- `1-create-bucket.sh`, `2-deploy.sh`, etc. - Shell scripts that use the AWS CLI to deploy and manage the application.
+- `function` - A Node.js function. Node.js関数
+- `template.yml` - An AWS CloudFormation template that creates an application. アプリケーションを作成する AWS CloudFormation テンプレート
+- `1-create-bucket.sh`, `2-deploy.sh`, etc. - Shell scripts that use the AWS CLI to deploy and manage the application.  AWS CLI を使用してアプリケーションをデプロイおよび管理するシェルスクリプト。
 
 Use the following instructions to deploy the sample application.
+サンプル アプリケーションをデプロイするには、次の手順に従います。
 
-# Requirements
-- [Node.js 18 with npm](https://nodejs.org/en/download/releases/)
+# Requirements 要件
+- [Node.js 18 with npm (Node.js 18 と npm)](https://nodejs.org/en/download/releases/)
 - The Bash shell. For Linux and macOS, this is included by default. In Windows 10, you can install the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows-integrated version of Ubuntu and Bash.
+  Bashシェル。LinuxとmacOSではデフォルトで含まれています。Windows 10では、[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)をインストールすることで、Windows統合版のUbuntuとBashを入手できます。
 - [The AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) v1.17 or newer.
+  [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) v1.17 以降。
 
 # Setup
 Download or clone this repository.
