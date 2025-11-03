@@ -42,10 +42,10 @@
     Waiting for stack create/update to complete
     Successfully created/updated stack - nodejs-apig
 
-This script uses AWS CloudFormation to deploy the Lambda functions and an IAM role. If the AWS CloudFormation stack that contains the resources already exists, the script updates it with any changes to the template or function code.
+このスクリプトは、AWS CloudFormation を使用して Lambda 関数と IAM ロールをデプロイします。リソースを含む AWS CloudFormation スタックが既に存在する場合、スクリプトはテンプレートまたは関数コードの変更に合わせてスタックを更新します。
 
-# Test
-To invoke the function directly with a test event (`event.json`), run `3-invoke.sh`.
+# テスト
+テスト イベント (`event.json`) を使用して関数を直接呼び出すには、`3-invoke.sh` を実行します。
 
     nodejs-apig$ ./3-invoke.sh
     {
@@ -53,9 +53,9 @@ To invoke the function directly with a test event (`event.json`), run `3-invoke.
         "ExecutedVersion": "$LATEST"
     }
 
-Let the script invoke the function a few times and then press `CRTL+C` to exit.
+スクリプトに関数を数回呼び出させたら、`CRTL+C` を押して終了します。
 
-To invoke the function with the REST API, run the `4-get.sh` script. This script uses cURL to send a GET request to the API endpoint.
+REST API を使って関数を呼び出すには、`4-get.sh` スクリプトを実行します。このスクリプトは cURL を使用して API エンドポイントに GET リクエストを送信します。
 
     nodejs-apig$ ./4-get.sh
     > GET /api/ HTTP/1.1
@@ -76,24 +76,24 @@ To invoke the function with the REST API, run the `4-get.sh` script. This script
       "FunctionCount": 39
     }
 
-The application uses AWS X-Ray to trace requests. Open the [X-Ray console](https://console.aws.amazon.com/xray/home#/service-map) to view the service map. The following service map shows the function invoked in two ways.
+アプリケーションはAWS X-Rayを使用してリクエストをトレースします。[X-Rayコンソール](https://console.aws.amazon.com/xray/home#/service-map)を開いてサービスマップを表示します。以下のサービスマップは、関数が2つの方法で呼び出されたことを示しています。
 
 ![Service Map](/sample-apps/nodejs-apig/images/nodejs-apig-servicemap.png)
 
-Choose a node in the main function graph. Then choose **View traces** to see a list of traces. Choose any trace to view a timeline that breaks down the work done by the function.
+メイン関数グラフ内のノードを選択します。次に、**トレースを表示** を選択してトレースのリストを表示します。任意のトレースを選択すると、関数によって実行された処理の詳細を示すタイムラインが表示されます。
 
 ![Trace](/sample-apps/nodejs-apig/images/nodejs-apig-trace.png)
 
-Finally, view the application in the Lambda console.
+最後に、Lambda コンソールでアプリケーションを表示します。
 
-*To view the application*
-1. Open the [applications page](https://console.aws.amazon.com/lambda/home#/applications) in the Lambda console.
-2. Choose **nodejs-apig**.
+*アプリケーションを表示するには*
+1. Lambda コンソールで [applications page](https://console.aws.amazon.com/lambda/home#/applications) を開く
+2.  **nodejs-apig**. を選択する
 
   ![Application](/sample-apps/nodejs-apig/images/nodejs-apig-application.png)
 
-# Cleanup
-To delete the application, run `5-cleanup.sh`.
+# クリーンアップ
+アプリケーションを削除するには、 `5-cleanup.sh`. を実行します。
 
     nodejs-apig$ ./5-cleanup.sh
 
