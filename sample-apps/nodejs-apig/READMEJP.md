@@ -14,7 +14,7 @@
 
 サンプル アプリケーションをデプロイするには、次の手順に従います。
 
-# Requirements 要件
+# 要件
 - [Node.js 18 と npm](https://nodejs.org/en/download/releases/)
 - Bashシェル。LinuxとmacOSではデフォルトで含まれています。Windows 10では、[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)をインストールすることで、Windows統合版のUbuntuとBashを入手できます。
 - [The AWS CLI] v1.17 以降。
